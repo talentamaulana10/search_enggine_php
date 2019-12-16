@@ -74,7 +74,7 @@
         echo "<td>$alamat</td>";
         echo "<td>$telp</td>";
         echo "<td><a href='remove.php?id=$id'>hapus</a></td>";
-        echo "<td><button>edit</button></td>";
+        echo "<td><a href='edit.php?id=$id'>edit</a></td>";
         echo "</tr>";
       }
       
