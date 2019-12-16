@@ -43,7 +43,8 @@
       <th scope="col">alamat</th>
       <!-- <th scope="col">email</th> -->
       <th scope="col">telephon</th>
-      <th scope="col">aksi</th>
+      <th scope="col">hapus</th>
+      <th scope="col">edit</th>
     </tr>
   </thead>
   <tbody>
@@ -73,6 +74,7 @@
         echo "<td>$alamat</td>";
         echo "<td>$telp</td>";
         echo "<td><a href='remove.php?id=$id'>hapus</a></td>";
+        echo "<td><button>edit</button></td>";
         echo "</tr>";
       }
       
