@@ -43,16 +43,17 @@
       <th scope="col">alamat</th>
       <!-- <th scope="col">email</th> -->
       <th scope="col">telephon</th>
-      
+      <th scope="col">aksi</th>
     </tr>
   </thead>
   <tbody>
   
   <?php
 
+  
+
   if(isset($_POST['btn_submit'])){
     $query = $_POST['query'];
-
     $sql = "SELECT * FROM customer WHERE nm_customer LIKE '%$query%' OR jenis LIKE '%$query%' OR alamat LIKE '%$query%' OR telp LIKE '%$query%';";
     $result = mysqli_query($koneksi,$sql);
     $resultCheck = mysqli_num_rows($result);
@@ -64,18 +65,27 @@
         $jenis = $row['jenis'];
         $alamat = $row['alamat'];
         $telp = $row['telp'];
+        $id = $row['id_customer'];
+        
         echo "<tr>";
         echo "<td>$nama_customer</td>";
         echo "<td>$jenis</td>";
         echo "<td>$alamat</td>";
         echo "<td>$telp</td>";
+        echo "<td><a href='remove.php?id=$id'>hapus</a></td>";
         echo "</tr>";
       }
+      
+    }
+    else{
+     
+
     }
   }
-   
+
+  
    ?>
-  </tr>
+  
    
   </tbody>
 </table>
