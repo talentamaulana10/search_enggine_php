@@ -26,7 +26,7 @@
 <div style="width:90%;margin-top:100px" class="container" >
 <form action="" method="post" >
 <div class="input-group mb-3">
-  <input type="text" name="query"  class="form-control" placeholder="Nama Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <input type="text" name="query"  class="form-control" placeholder="Tuliskan Sesuatu Tentang Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
   <div class="input-group-append">
     <button class="btn btn-outline-secondary" type="submit" name="btn_submit" id="button-addon2">Cari</button>
   </div>
@@ -53,7 +53,7 @@
   if(isset($_POST['btn_submit'])){
     $query = $_POST['query'];
 
-    $sql = "SELECT * FROM customer WHERE nm_customer LIKE '$query%';";
+    $sql = "SELECT * FROM customer WHERE nm_customer LIKE '%$query%' OR jenis LIKE '%$query%' OR alamat LIKE '%$query%' OR telp LIKE '%$query%';";
     $result = mysqli_query($koneksi,$sql);
     $resultCheck = mysqli_num_rows($result);
  
@@ -65,7 +65,6 @@
         $alamat = $row['alamat'];
         $telp = $row['telp'];
         echo "<tr>";
-       //  echo "<th>$id_customer</th>";
         echo "<td>$nama_customer</td>";
         echo "<td>$jenis</td>";
         echo "<td>$alamat</td>";
