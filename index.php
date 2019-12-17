@@ -33,8 +33,12 @@
 </div>
 </form>
 
+<a href="add-customer-data.php">
+<button style="width:100%" type="button" class="btn btn-primary">Tambah Data Customer</button>
+</a>
 
-<table class="table">
+
+<table style="margin-top:20px" class="table">
   <thead class="thead-dark">
     <tr>
       <!-- <th scope="col">id</th> -->
